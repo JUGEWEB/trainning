@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+.botton {
+    text-align: center;
+    background-color: rgba(99, 79, 14, 0.829);
+    color: rgb(249, 250, 250);
+    margin-right: 15px;
+    cursor: pointer;
+}
+.open .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+.open .line2 {
+    opacity: 0;
+
+}
+.open.line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+.menu-line {
+    display: flex-end;
+    position: relative;
+    margin: 5px;
+    width: 30px;
+    height: 3px;
+    background-color:aliceblue;
+
+}
+/*style for small devices (phone)*/
+@media only screen and (max-width:768px) {
+    .logoImg {
+        position: relative;
+        max-width: 60px;
+        margin: 10px;
+    }
+    .menu-line-container {
+        margin: 10px;
+        position: relative;    
+    }
+    .gems {
+        max-width: 100%;
+        filter: brightness(30%);
+    }
+    .editBottom {
+        position: relative;
+        margin: 10px;
+    }
+    .headbackground {
+        position: fixed;
+        background-color: rgba(218, 148, 18, 0.801);
+        display: flex;
+        width: 100%;
+        top: 0;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        z-index: 1000;
+    }
+    .welcome {
+        margin-top: 72px;
+        position: relative;
+        width: 100%;
+    }
+    .welcome::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/welcome\ to\ bnb\ smarchain\ next\ gems\ \(1\).gif');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        filter: brightness(30%);
+        z-index: -1;
+
+    }
+}
+#window{
+    margin-top: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+}
+.swapbox_select {
+    width: 50%;
+    float: left;
+}
+.swapbox{
+    overflow: auto;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    border: 1px solid #565656;
+}
+.token_select{
+    padding:5px 0;
+}
+.token_select:hover{
+    background-color: #464646;
+    cursor: pointer;
+    
+}
+.token_row{
+    padding: 5px 10px;
+}
+.token_row:hover{
+    background-color: #e4e4e4;
+    cursor: pointer;
+}
+.gas_estimate_label{
+    padding:5px;
+}
+.modal-body{
+    height: 500px;
+    overflow: scroll;   
+}
