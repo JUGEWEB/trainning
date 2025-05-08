@@ -1,0 +1,105 @@
+/* Reset styles */
+
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+  }
+
+  .aad {
+    position: relative;
+    color: #0056b3;
+    background-color: transparent;
+    padding-bottom: 20px;
+    margin-left: 40%;
+    margin-top: 20px;
+    font-size: 50px;
+  }
+  
+  /* Flex container for the main content */
+  .flex-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Login section styling */
+  .log {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .log h2 {
+    margin-bottom: 20px;
+  }
+  
+  .inptim,
+  .inptin {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .bttn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .bttn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Ensure the form is scrollable */
+  form {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add spacing for the input fields */
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  /* Button styles for adding images and videos */
+  .add-button {
+    background-color: #28a745;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
+ 
+  

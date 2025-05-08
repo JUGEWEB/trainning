@@ -1,0 +1,85 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Main form container */
+  .formi {
+    width: 100%;
+    max-width: 500px;             /* Max width for readability */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Label styling */
+  .formi label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;                   /* Dark color for readability */
+  }
+  
+  /* Text inputs, number inputs, and textarea */
+  .formi input[type="text"],
+  .formi input[type="number"],
+  .formi textarea {
+    width: 100%;                   /* Full width */
+    padding: 10px;
+    margin-bottom: 15px;           /* Space between fields */
+    border: 1px solid #ddd;        /* Light border */
+    border-radius: 5px;            /* Rounded corners */
+    font-size: 16px;
+  }
+  
+  /* Description textarea specific */
+  .formi textarea {
+    min-height: 80px;              /* Slightly larger for multi-line input */
+    resize: vertical;              /* Allow vertical resize */
+  }
+  
+  /* Primary and add buttons */
+  .bbtno, .add-button {
+    display: inline-block;
+    background-color: #007bff;     /* Primary button color */
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover effect */
+  .bbtno:hover, .add-button:hover {
+    background-color: #0056b3;     /* Darker on hover */
+  }
+  
+  /* Add button specific styling */
+  .add-button {
+    background-color: #28a745;     /* Green for add actions */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;     /* Darker green on hover */
+  }
+  
+  /* Styling for image and video input fields */
+  .inp, .inpt {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .formi {
+      padding: 15px;
+    }
+  }
+  
