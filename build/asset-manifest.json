@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/JUGEWEB/static/css/main.daf8ede6.css",
-    "main.js": "/JUGEWEB/static/js/main.3d15e424.js",
+    "main.js": "/JUGEWEB/static/js/main.b6d046b3.js",
     "index.html": "/JUGEWEB/index.html",
     "main.daf8ede6.css.map": "/JUGEWEB/static/css/main.daf8ede6.css.map",
-    "main.3d15e424.js.map": "/JUGEWEB/static/js/main.3d15e424.js.map"
+    "main.b6d046b3.js.map": "/JUGEWEB/static/js/main.b6d046b3.js.map"
   },
   "entrypoints": [
     "static/css/main.daf8ede6.css",
-    "static/js/main.3d15e424.js"
+    "static/js/main.b6d046b3.js"
   ]
 }
