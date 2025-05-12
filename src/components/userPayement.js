@@ -30,7 +30,11 @@ function UserPayment() {
     if (!groups[year][month]) groups[year][month] = {};
     if (!groups[year][month][day]) groups[year][month][day] = [];
 
-    groups[year][month][day].push(order);
+   const existingTx = groups[year][month][day].find(o => o.transactionHash === order.transactionHash);
+if (!existingTx) {
+  groups[year][month][day].push(order);
+}
+
   });
 
   setGrouped(groups);
