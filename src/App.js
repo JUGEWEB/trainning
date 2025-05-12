@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "./components/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {Route, Routes, useNavigate } from "react-router-dom";  // Import React Router
+import {Route, Routes } from "react-router-dom";  // Import React Router
 import "./App.css"; // Import the CSS file
 
 import ProductHeaderImage from "./components/productHeaderImage";
 import ThemeAndInfo from "./components/themeAndInfo";
 import UploadZone from "./components/uploadZone";
 import Product from "./components/product";
+import UserPayment from "./components/userPayement";
+import ItemInfo from "./components/itemInfo";
+import UserInfo from "./components/userInfo";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -30,13 +33,6 @@ const App = () => {
       });
   };
 
-   // Create the navigate function using the useNavigate hook
-   const navigate = useNavigate();
-
-   const handleNavigateToBeauty = () => {
-     // Navigates to beauty page with selected type
-     navigate(`/beauty`);
-   };
 
   return user ?(
     <>
@@ -46,6 +42,9 @@ const App = () => {
     <Route path="/typeimage" element={<ProductHeaderImage  />} />
     <Route path="/themeandinfo" element={<ThemeAndInfo  />} />
     <Route path="/uploadzone" element={<UploadZone />} />
+    <Route path="/userorder" element={<UserPayment />} />
+    <Route path="/getiteminformation" element={<ItemInfo />} />
+     <Route path="/user-informationtx/:transactionHash" element={<UserInfo />} />
     </Routes>
     
     </>

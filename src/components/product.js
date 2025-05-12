@@ -1,6 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
 import MissingVariantsChecker from "./missingVariants";
+import AdVariants from "./AdVariants";
 
 function Product() {
     const navigate = useNavigate()
@@ -17,13 +18,24 @@ function Product() {
         navigate("./uploadzone");
       };
 
+        const handleUserOrder= () => {
+        navigate("./userorder");
+      };
+
+        const handleGetItemInformation= () => {
+        navigate("./getiteminformation");
+      };
+
 
     return (
         <div>
            <div><MissingVariantsChecker/></div>
+           <div><AdVariants/></div>
            <button onClick={handleTypeImageClick}>Go to Type Image</button>
            <button onClick={handlethemeandinfo}>Go to Theme and info</button>
            <button onClick={handleuploadzone}>Go to upload zone</button>
+            <button onClick={handleUserOrder}>Users order</button>
+             <button onClick={handleGetItemInformation}>Get item informations</button>
         </div>
     )
 }

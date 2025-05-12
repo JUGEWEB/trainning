@@ -27,7 +27,7 @@ const ItemInfo = () => {
 
   return (
     <div style={{maxWidth: "500px", overflowX: "auto", height: "auto"}}>
-      <h1>Fetch Folder Information</h1>
+      <h1>Get item Information</h1>
       <div style={{ marginBottom: "20px" }}>
         <input
           type="text"

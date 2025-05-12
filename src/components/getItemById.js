@@ -22,6 +22,7 @@ function ItemDetail() {
       // Make GET request to fetch item details by ID
       const response = await axios.get(`https://api.malidag.com/item/${itemId}`);
       setItem(response.data); // Set the item data
+      console.log("SIZES:", item.item.size);
     } catch (err) {
       setError('Item not found or failed to fetch data');
     } finally {
@@ -65,7 +66,27 @@ function ItemDetail() {
           <p><strong>Network:</strong> {item.item.network}</p>
           <p><strong>Genre:</strong> {item.item.genre}</p>
           <p><strong>Type:</strong> {item.item.type}</p>
-          <p><strong>Size:</strong> {item.item.size}</p>
+
+         {item.item.size && typeof item.item.size === "object" && (
+  <div>
+    <h3>Sizes</h3>
+    <ul>
+      {Object.entries(item.item.size).map(([key, sizeArray]) => {
+        const parsedSizes = Array.isArray(sizeArray)
+          ? sizeArray[0].split(",").map((s) => s.trim())
+          : [];
+
+        return (
+          <li key={key}>
+            <strong>{key}</strong>: {parsedSizes.join(", ")}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
+
+
           <p><strong>Sold:</strong> {item.item.sold}</p>
 
           {/* Render images */}
@@ -81,19 +102,28 @@ function ItemDetail() {
           </div>
 
           {/* Render videos */}
-          <div>
-            <h3>Videos</h3>
-            {item.item.videos && item.item.videos.length > 0 ? (
-              item.item.videos.map((video, index) => (
-                <video key={index} width="400" controls>
-                  <source src={video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ))
-            ) : (
-              <p>No videos available</p>
-            )}
-          </div>
+      <div>
+  <h3>Videos</h3>
+  {item.item.videos ? (
+    Array.isArray(item.item.videos) ? (
+      item.item.videos.map((video, index) => (
+        <video key={index} width="400" controls>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ))
+    ) : (
+      <video width="400" controls>
+        <source src={item.item.videos} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )
+  ) : (
+    <p>No videos available</p>
+  )}
+</div>
+
+
 
           {/* Render additional details */}
           <div>
