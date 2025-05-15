@@ -11,6 +11,12 @@ import Product from "./components/product";
 import UserPayment from "./components/userPayement";
 import ItemInfo from "./components/itemInfo";
 import UserInfo from "./components/userInfo";
+import UserPaymentByBrand from "./components/userPayementByBrand";
+import UserInfoByBrand from "./components/userInfoByBrand";
+import UserPaymentsByBrandMonth from "./components/UserPaymentsByBrandMonth";
+import UserPaymentsByBrandWeek from "./components/UserPaymentsByBrandWeek";
+import UserPaymentsByYear from "./components/UserPaymentsByYear";
+import UserPaymentsByDay from "./components/UserPaymentsByDay";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -44,7 +50,15 @@ const App = () => {
     <Route path="/uploadzone" element={<UploadZone />} />
     <Route path="/userorder" element={<UserPayment />} />
     <Route path="/getiteminformation" element={<ItemInfo />} />
+    <Route path="/userBrandPayment" element={<UserPaymentByBrand />} />
      <Route path="/user-informationtx/:transactionHash" element={<UserInfo />} />
+     <Route path="/user-informationtx-by-brand/:transactionHash/:itemId" element={<UserInfoByBrand />} />
+    <Route path="/user-payments/brand/:brand/year/:year" element={<UserPaymentsByYear />} />
+<Route path="/user-payments/brand/:brand/month/:monthKey" element={<UserPaymentsByBrandMonth />} />
+<Route path="/user-payments/brand/:brand/week/:weekKey" element={<UserPaymentsByBrandWeek />} />
+<Route path="/user-payments/brand/:brand/day/:dayKey" element={<UserPaymentsByDay />} />
+
+
     </Routes>
     
     </>

@@ -28,6 +28,8 @@ function UploadFolder() {
   const [brand, setBrand] = useState("");
 const [department, setDepartment] = useState("");
 const [brandType, setBrandType] = useState("");
+const [brandPrice, setBrandPrice] = useState("");
+
 
   
 
@@ -116,6 +118,8 @@ const [brandType, setBrandType] = useState("");
     formData.append("brand", brand);
     formData.append("department", department);
     formData.append("brandType", brandType);
+    formData.append("brandPrice", brandPrice);
+
 
     // Append sizes
     formData.append("sizes", JSON.stringify(sizes)); // Serialize sizes object
@@ -269,6 +273,18 @@ const [brandType, setBrandType] = useState("");
     onChange={(e) => setBrandType(e.target.value)}
   />
 </div>
+
+{/* Brand Price */}
+<div>
+  <label>Brand Price:</label>
+  <input
+    type="text"
+    value={brandPrice}
+    onChange={(e) => setBrandPrice(e.target.value)}
+    placeholder="Enter brand price"
+  />
+</div>
+
 
 
        {/* Sizes */}
