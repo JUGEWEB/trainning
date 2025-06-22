@@ -57,22 +57,32 @@ console.log("Brand:", brand, "DayKey:", dayKey);
         {orders.map((order, index) => {
           const time = new Date(order.timestamp).toLocaleTimeString();
           return (
-            <li key={index}>
-              <strong>{order.fullName}</strong> ({order.email}) at <em>{time}</em> paid {order.amount} {order.cryptoSymbol} — Tx:{" "}
-              <a
-                href={`https://bscscan.com/tx/${order.transactionHash}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {order.transactionHash.slice(0, 12)}...
-              </a>
-              <Link
-                to={`/user-informationtx-by-brand/${order.transactionHash}/${order.items}`}
-                style={{ marginLeft: "10px", textDecoration: "underline", color: "blue" }}
-              >
-                View Item Info
-              </Link>
-            </li>
+           <li key={index} style={{ marginBottom: "0.75rem" }}>
+  <div>
+    <strong>{order.fullName}</strong> ({order.email}) at <em>{time}</em>
+  </div>
+  <div>
+    Paid {order.amount} {order.cryptoSymbol} — BrandPrice: <strong>${parseFloat(order.brandPrice || 0).toFixed(2)}</strong>, 
+    price: <strong>${parseFloat(order.price || 0).toFixed(2)}</strong>
+  </div>
+  <div>
+    Tx:{" "}
+    <a
+      href={`https://bscscan.com/tx/${order.transactionHash}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {order.transactionHash.slice(0, 12)}...
+    </a>
+    <Link
+      to={`/user-informationtx-by-brand/${order.transactionHash}/${order.items}`}
+      style={{ marginLeft: "10px", textDecoration: "underline", color: "blue" }}
+    >
+      View Item Info
+    </Link>
+  </div>
+</li>
+
           );
         })}
       </ul>

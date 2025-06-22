@@ -31,6 +31,21 @@ function Product() {
         navigate("./userBrandPayment");
       };
 
+       const handlePostBrand= () => {
+        navigate("./post-brand");
+      };
+
+       const handleModifyBrand= () => {
+        navigate("./modify-brand");
+      };
+
+       const handleFixMissingDependencies= () => {
+        navigate("./missingDependencies");
+      };
+      const handleManageWhatsappData= () => {
+        navigate("./whatsapp");
+      };
+
 
     return (
         <div>
@@ -45,6 +60,10 @@ function Product() {
             <button onClick={handleUserOrder}>Users order</button>
              <button onClick={handleGetItemInformation}>Get item informations</button>
              <button onClick={handleUserBrandPayement}>Users orders by brand</button>
+              <button onClick={handlePostBrand}>Add theme in a brand </button>
+              <button onClick={handleModifyBrand}>Modify theme in a brand </button>
+               <button onClick={handleFixMissingDependencies}>Fix missing Dependency</button>
+               <button onClick={handleManageWhatsappData}>Manage whatsapp data</button>
         </div>
     )
 }

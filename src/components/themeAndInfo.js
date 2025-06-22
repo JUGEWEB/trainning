@@ -5,11 +5,13 @@ import Header from "./header";
 import GetItemInfo from "./getItemInfo";
 import ItemDetail from "./getItemById";
 import RemoveSizes from "./removeSize";
+import ThemeDisplay from "./displayTheme";
 
 function ThemeAndInfo() {
     return (
         <div>
          <div>
+            <ThemeDisplay/>
                 <AddTheme />
                 <UpdateThemeImage/>
               <Header />

@@ -17,6 +17,10 @@ import UserPaymentsByBrandMonth from "./components/UserPaymentsByBrandMonth";
 import UserPaymentsByBrandWeek from "./components/UserPaymentsByBrandWeek";
 import UserPaymentsByYear from "./components/UserPaymentsByYear";
 import UserPaymentsByDay from "./components/UserPaymentsByDay";
+import PostBrand from "./components/PostBrand";
+import ModifyBrandData from "./components/ModifyBrandData";
+import FixMissingBrandFields from "./components/fixMissingDependencies";
+import SendWhatsAppMessage from "./components/sendWhatsappMessage";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -45,10 +49,14 @@ const App = () => {
    
     <Routes>
     <Route path="/" element={<Product  />} />
+    <Route path="/post-brand" element={<PostBrand  />} />
+     <Route path="/modify-brand" element={< ModifyBrandData />} />
     <Route path="/typeimage" element={<ProductHeaderImage  />} />
     <Route path="/themeandinfo" element={<ThemeAndInfo  />} />
     <Route path="/uploadzone" element={<UploadZone />} />
     <Route path="/userorder" element={<UserPayment />} />
+    <Route path="/Whatsapp" element={<SendWhatsAppMessage />} />
+     <Route path="/missingDependencies" element={<FixMissingBrandFields />} />
     <Route path="/getiteminformation" element={<ItemInfo />} />
     <Route path="/userBrandPayment" element={<UserPaymentByBrand />} />
      <Route path="/user-informationtx/:transactionHash" element={<UserInfo />} />

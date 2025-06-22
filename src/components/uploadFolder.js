@@ -3,6 +3,8 @@ import axios from "axios";
 import "./uploadFolder.css";
 
 function UploadFolder() {
+  const [uploadMessage, setUploadMessage] = useState("");
+const [isError, setIsError] = useState(false);
   const [folderId, setFolderId] = useState(Date.now().toString()); // Unique folder ID
   const [imagesFolder, setImagesFolder] = useState([]);
   const [video, setVideo] = useState(null);
@@ -78,6 +80,8 @@ const [brandPrice, setBrandPrice] = useState("");
 
   const uploadFiles = async () => {
     const formData = new FormData();
+     setUploadMessage(""); // Reset message
+  setIsError(false);
 
     // Add folder ID
     formData.append("folderId", folderId);
@@ -128,6 +132,9 @@ const [brandPrice, setBrandPrice] = useState("");
       const response = await axios.post("https://api.malidag.com/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+
+       setUploadMessage("✅ Upload successful!");
+    console.log("Upload successful:", response.data);
       console.log("Upload successful:", response.data);
     } catch (error) {
       console.error("Error uploading files:", error);
@@ -325,6 +332,12 @@ const [brandPrice, setBrandPrice] = useState("");
 
       {/* Upload Button */}
       <button onClick={uploadFiles}>Upload</button>
+      {uploadMessage && (
+  <div style={{ color: isError ? "red" : "green", marginTop: "10px" }}>
+    {uploadMessage}
+  </div>
+)}
+
     </div>
   );
 }

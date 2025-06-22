@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 function UserPayment() {
   const [orders, setOrders] = useState([]);
   const [grouped, setGrouped] = useState({});
-  const [selectedOrder, setSelectedOrder] = useState(null);
-
 
   useEffect(() => {
     fetch("https://api.malidag.com/api/orders")
@@ -17,29 +15,30 @@ function UserPayment() {
       .catch((err) => console.error("Error fetching orders:", err));
   }, []);
 
- const groupByDate = (orders) => {
-  const groups = {};
+  const groupByDate = (orders) => {
+    const groups = {};
 
-  orders.forEach((order) => {
-    const txDate = new Date(order.timestamp || Date.now()); // fallback for legacy entries
-    const day = txDate.toLocaleDateString();
-    const month = `${txDate.getMonth() + 1}-${txDate.getFullYear()}`;
-    const year = `${txDate.getFullYear()}`;
+    orders.forEach((order) => {
+      const txDate = new Date(order.timestamp || Date.now());
+      const day = txDate.toLocaleDateString();
+      const month = `${txDate.getMonth() + 1}-${txDate.getFullYear()}`;
+      const year = `${txDate.getFullYear()}`;
 
-    if (!groups[year]) groups[year] = {};
-    if (!groups[year][month]) groups[year][month] = {};
-    if (!groups[year][month][day]) groups[year][month][day] = [];
+      if (!groups[year]) groups[year] = {};
+      if (!groups[year][month]) groups[year][month] = {};
+      if (!groups[year][month][day]) groups[year][month][day] = [];
 
-   const existingTx = groups[year][month][day].find(o => o.transactionHash === order.transactionHash);
-if (!existingTx) {
-  groups[year][month][day].push(order);
-}
+      const exists = groups[year][month][day].find(
+        (o) => o.transactionHash === order.transactionHash
+      );
 
-  });
+      if (!exists) {
+        groups[year][month][day].push(order);
+      }
+    });
 
-  setGrouped(groups);
-};
-
+    setGrouped(groups);
+  };
 
   return (
     <div style={{ padding: "1rem" }}>
@@ -53,34 +52,35 @@ if (!existingTx) {
               {Object.entries(days).map(([day, orders]) => (
                 <div key={day} style={{ marginLeft: "1.5rem" }}>
                   <h5>{day}</h5>
+                  <p>🧾 {orders.length} orders</p>
                   <ul>
-                    {orders.map((order, index) => (
-                        
-                      <li key={index}>
-                        {(() => {
-  const date = new Date(order.timestamp || Date.now());
-  const time = date.toLocaleTimeString(); // ⏱ formatted time
-  return (
-    <>
-      <strong>{order.fullName}</strong> ({order.email}) at <em>{time}</em> paid {order.amount} {order.cryptoSymbol} — Tx:{" "}
-      <a
-        href={`https://bscscan.com/tx/${order.transactionHash}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {order.transactionHash.slice(0, 12)}...
-      </a>
-     <Link
-  to={`/user-informationtx/${order.transactionHash}`}
-  style={{ marginLeft: "10px", textDecoration: "underline", color: "blue" }}
->
-  View User Information
-</Link>
-    </>
-  );
-})()}
-                      </li>
-                    ))}
+                    {orders.map((order, index) => {
+                      const time = new Date(order.timestamp || Date.now()).toLocaleTimeString();
+                      return (
+                        <li key={index}>
+                          <strong>{order.fullName}</strong> ({order.email}) at <em>{time}</em>
+                          {" — "}
+                          <a
+                            href={`https://bscscan.com/tx/${order.transactionHash}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ marginLeft: "5px" }}
+                          >
+                            {order.transactionHash.slice(0, 12)}...
+                          </a>
+                          <Link
+                            to={`/user-informationtx/${order.transactionHash}`}
+                            style={{
+                              marginLeft: "10px",
+                              textDecoration: "underline",
+                              color: "blue",
+                            }}
+                          >
+                            View User Info
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
