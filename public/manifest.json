@@ -1,0 +1,20 @@
+{
+  "short_name": "Malidag",
+  "name": "Malidag Product App",
+  "icons": [
+    {
+      "src": "icons/mu_icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/mu_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
