@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client"; // Use 'react-dom/client' for React 18
 import App from "./App";
 import "./index.css";
 import {HashRouter} from "react-router-dom"
-import * as serviceWorker from "./serviceWorker"; // 👈 Add this
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 // Find the root element in the HTML
 const rootElement = document.getElementById("root");
@@ -21,4 +21,4 @@ root.render(
   </React.StrictMode>
 );
 
-serviceWorker.register(); // 👈 Call the register function
+serviceWorkerRegistration.register();

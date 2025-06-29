@@ -11,6 +11,7 @@ function Product() {
 
    useEffect(() => {
     window.addEventListener("beforeinstallprompt", (e) => {
+       console.log("🔥 beforeinstallprompt fired"); // <- This should show in DevTools
       e.preventDefault(); // Prevent the default mini-infobar
       setDeferredPrompt(e); // Save the event for later
       setShowInstall(true); // Show your custom install button
