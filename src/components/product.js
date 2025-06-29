@@ -10,13 +10,20 @@ function Product() {
   const [showInstall, setShowInstall] = useState(false);
 
    useEffect(() => {
-    window.addEventListener("beforeinstallprompt", (e) => {
-       console.log("🔥 beforeinstallprompt fired"); // <- This should show in DevTools
-      e.preventDefault(); // Prevent the default mini-infobar
-      setDeferredPrompt(e); // Save the event for later
-      setShowInstall(true); // Show your custom install button
-    });
-  }, []);
+  const handleBeforeInstallPrompt = (e) => {
+    console.log("🔥 beforeinstallprompt fired");
+    e.preventDefault();
+    setDeferredPrompt(e);
+    setShowInstall(true);
+  };
+
+  window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+  return () => {
+    window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+  };
+}, []);
+
 
   const handleInstallClick = () => {
     if (deferredPrompt) {
