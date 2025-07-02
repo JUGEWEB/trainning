@@ -1,15 +1,16 @@
 {
   "name": "malidagproduct",
-  "homepage": "https://user.malidag.com",
+  "homepage": "",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "electron.js",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "update": "git add . && git commit -m 'update' && git push && npm run deploy"
+    "update": "git add . && git commit -m 'update' && git push && npm run deploy",
+    "electron": "electron ."
   },
   "keywords": [],
   "author": "",
@@ -71,6 +72,20 @@
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^6.4.1"
   },
+  "build": {
+  "appId": "com.malidag.product",
+  "productName": "Malidag Product App",
+  "directories": {
+    "buildResources": "assets"
+  },
+  "files": [
+    "build/**/*",
+    "electron.js"
+  ],
+  "win": {
+    "target": "nsis"
+  }
+},
   "browserslist": {
     "production": [
       ">0.2%",
@@ -84,6 +99,8 @@
     ]
   },
   "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12",
     "gh-pages": "^6.3.0",
     "workbox-webpack-plugin": "^7.3.0"
   },

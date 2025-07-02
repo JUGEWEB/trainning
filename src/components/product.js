@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom"
 import MissingVariantsChecker from "./missingVariants";
 import AdVariants from "./AdVariants";
 import DeleteImagesVariants from "./deleteImages-variants";
+import TriggerTranslation from "./translateText";
 
 function Product() {
 
@@ -85,6 +86,11 @@ function Product() {
     return (
         <div>
 
+          <a href="https://user.malidag.com/downloads/malidag-setup.exe">
+  <button>⬇️ Download Desktop App</button>
+</a>
+
+
            {showInstall && (
         <button onClick={handleInstallClick} style={{ position: "fixed", top: 10, right: 10, zIndex: 1000 }}>
           📲 Install App
@@ -106,6 +112,7 @@ function Product() {
               <button onClick={handleModifyBrand}>Modify theme in a brand </button>
                <button onClick={handleFixMissingDependencies}>Fix missing Dependency</button>
                <button onClick={handleManageWhatsappData}>Manage whatsapp data</button>
+               <TriggerTranslation/>
         </div>
     )
 }
