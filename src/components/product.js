@@ -102,7 +102,7 @@ function Product() {
      <LearnVideo
   title="How to Add Products to Malidag"
   description="This video walks you through the process of uploading and managing products on the Malidag platform."
-  videoUrl="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+  videoUrl="https://www.youtube.com/embed/n0Emk8K94cc"
 />
 
            <div><MissingVariantsChecker/></div>
