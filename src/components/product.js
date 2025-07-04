@@ -4,6 +4,8 @@ import MissingVariantsChecker from "./missingVariants";
 import AdVariants from "./AdVariants";
 import DeleteImagesVariants from "./deleteImages-variants";
 import TriggerTranslation from "./translateText";
+import LearnVideo from "./learnVideo";
+import VideoManager from "./videoImagesUploads";
 
 function Product() {
 
@@ -96,6 +98,13 @@ function Product() {
           📲 Install App
         </button>
       )}
+
+     <LearnVideo
+  title="How to Add Products to Malidag"
+  description="This video walks you through the process of uploading and managing products on the Malidag platform."
+  videoUrl="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+/>
+
            <div><MissingVariantsChecker/></div>
            <div style={{display: "flex"}}>
             <AdVariants/>
@@ -112,6 +121,7 @@ function Product() {
               <button onClick={handleModifyBrand}>Modify theme in a brand </button>
                <button onClick={handleFixMissingDependencies}>Fix missing Dependency</button>
                <button onClick={handleManageWhatsappData}>Manage whatsapp data</button>
+               <VideoManager/>
                <TriggerTranslation/>
         </div>
     )
