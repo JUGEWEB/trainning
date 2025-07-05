@@ -22,6 +22,7 @@ import ModifyBrandData from "./components/ModifyBrandData";
 import FixMissingBrandFields from "./components/fixMissingDependencies";
 import SendWhatsAppMessage from "./components/sendWhatsappMessage";
 import ZoomAndCategory from "./components/zoomandcategory";
+import ContinueLearn from "./components/learnVideoContenue";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -51,6 +52,7 @@ const App = () => {
     <Routes>
     <Route path="/" element={<Product  />} />
     <Route path="/post-brand" element={<PostBrand  />} />
+    <Route path="/continueLearn" element={<ContinueLearn  />} />
     <Route path="/zoomandcategory" element={<ZoomAndCategory  />} />
      <Route path="/modify-brand" element={< ModifyBrandData />} />
     <Route path="/typeimage" element={<ProductHeaderImage  />} />

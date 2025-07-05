@@ -84,6 +84,10 @@ function Product() {
         navigate("./zoomandcategory");
       };
 
+       const handleContinueLearn= () => {
+        navigate("./continueLearn");
+      };
+
 
     return (
         <div>
@@ -104,6 +108,8 @@ function Product() {
   description="This video walks you through the process of uploading and managing products on the Malidag platform."
   videoUrl="https://www.youtube.com/embed/n0Emk8K94cc"
 />
+
+<div style={{color: "blue", textDecoration: "underLined", cursor: "pointer"}}  onClick={handleContinueLearn} >continue learning here</div>
 
            <div><MissingVariantsChecker/></div>
            <div style={{display: "flex"}}>
