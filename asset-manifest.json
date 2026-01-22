@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/trainning/static/css/main.daf8ede6.css",
-    "main.js": "/trainning/static/js/main.b38cf308.js",
-    "workbox-1f84e78b.js.map": "/trainning/workbox-1f84e78b.js.map",
-    "workbox-1f84e78b.js": "/trainning/workbox-1f84e78b.js",
-    "service-worker.js.map": "/trainning/service-worker.js.map",
-    "service-worker.js": "/trainning/service-worker.js",
-    "index.html": "/trainning/index.html",
-    "main.daf8ede6.css.map": "/trainning/static/css/main.daf8ede6.css.map",
-    "main.b38cf308.js.map": "/trainning/static/js/main.b38cf308.js.map"
+    "main.css": "/static/css/main.daf8ede6.css",
+    "main.js": "/static/js/main.1bdbbcad.js",
+    "workbox-1f84e78b.js.map": "/workbox-1f84e78b.js.map",
+    "workbox-1f84e78b.js": "/workbox-1f84e78b.js",
+    "service-worker.js.map": "/service-worker.js.map",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.daf8ede6.css.map": "/static/css/main.daf8ede6.css.map",
+    "main.1bdbbcad.js.map": "/static/js/main.1bdbbcad.js.map"
   },
   "entrypoints": [
     "static/css/main.daf8ede6.css",
-    "static/js/main.b38cf308.js"
+    "static/js/main.1bdbbcad.js"
   ]
 }
